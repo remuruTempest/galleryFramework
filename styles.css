@@ -47,6 +47,9 @@ header{
 }
 
 /*container & project Section *************************************************/
+.parentContainer{
+    margin: 0 auto;
+}
 .container{
     text-align: center;
     background-color: rgb(7, 99, 99);
@@ -72,7 +75,6 @@ img{
 
 /* -------------------------------------Video section */
 .parentcontainer2{
-    width: 87%;
     margin: 0 auto;
 }
 .vidcontainer {
@@ -107,15 +109,17 @@ img{
 /***************************************************************information Section */
 
 .infoContainer{
-    width: 70vw;
+    /* width: 90vw; */
     /* align-items: center; */
     margin: 0 auto;
     background-color: rgb(187, 149, 100);
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    /* display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));  */
+    display: flex;
+    flex-wrap: wrap;
 }
 .photo{
-    grid-column: 1/3;
+    /* grid-column: 1/3; */
     /* grid-row: 1/4; */
     background-color: aqua;
 }
@@ -127,45 +131,100 @@ img{
     text-align: center;
     grid-column: auto/auto;
     /* grid-row: 1/4; */
-    background-color: rgb(18, 99, 99);
-}
-.miniInfo{
-    background-color: blanchedalmond;
+    background-color: rgb(108, 233, 233);
 }
 .otherInfo{
-    display: grid;
+    /* display: grid;
     width: 100%;
     grid-gap: 10px;
-    grid-template-columns: repeat(2,1fr);
-    /* grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));  */
+    grid-template-columns: repeat(2,1fr); */
+    /* grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));  */  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-   
 }
+.miniInfo{
+    width: cover;
+    background-color: blanchedalmond;
+}
+
 .socialLinks{
-    grid-column: 1/-1;
+    width: 100%;
     background-color: rgb(91, 133, 133);
 }
 
     
 /* footer Section *************************************************/
 footer{
-    margin-top: 1rem;
+margin-top: 1rem;
 background-color: rgb(44, 184, 184);
 width: 100vw;
 
 }
 .social{
     margin: 0 auto;
-    width: 10vw;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 .SLCont{
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 20%;
+    height: 20%
 }
 .SL{
     width: 100%;
     height: 100%;
 }
+
+/***************************************MEDIA QUERY******/
+
+@media (min-width:901px) and (max-width: 100vw) {
+    .infoContainer,.parentcontainer2,.parentContainer{
+        width: 80%;
+    }
+    .miniInfo{
+        width: 100%;
+    }
+    .information{
+        display: flex;
+        flex-wrap: wrap;
+        width:100%;
+    }
+    .name,.otherInfo{
+        width: 50%;
+    }
+    .nameCont{
+        width: 100%;
+        height: 100%;
+        padding-top: 12rem;
+        padding-bottom: auto;
+
+    }
+    .social{
+        width:50%;
+    }
+    .SLCont{
+        width:5%;
+        height:auto;
+    }
+
+  }/*@media (width >= 900px) close*/
+
+  @media (min-width: 100px) and (max-width: 900px) {
+    .name,.otherInfo{
+        width: 100%;
+    }
+    .miniInfo{
+        width: 100%;
+        
+    }
+    .social{
+        width:50%;
+    }
+    .SLCont{
+        width:20%;
+        height:auto;
+    }
+  }
